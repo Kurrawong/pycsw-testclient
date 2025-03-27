@@ -1,0 +1,7 @@
+[project]
+name = "pycsw-testclient"
+version = "0.1.0"
+description = "A testing web client for the https://pycsw.org[pyCSW] application"
+readme = "README.adoc"
+requires-python = ">=3.12"
+dependencies = []
