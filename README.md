@@ -16,16 +16,6 @@ The testing of response payloads is doe either with OWLLib or by parsing respons
 
 Results from tests are reported to the command line in the usual pytest way.
 
-## License & Reuse
-
-_This test client has initially been developed to test the [Geological Survey of South Australia](https://www.energymining.sa.gov.au/industry/geological-survey)'s pyCSW installation and is optimised for that. For use elsewhere, some recoding will likely be needed._
-
-The code in this repository is licensed for reuse using the [MIT License](https://opensource.org/license/mit), as is the code of the pyCSW application. See the LICENSE file for details.
-
-The implementation of CSW in Python as pyCSW is governed by the [pyCSW Steering Committee](https://pycsw.org/community/psc.html).
-
-The Catalogue Service for the Web (CSW) specification that pyCSW implements is an [Open Geospatial Consortium](https://www.ogc.org) standard that is freely available.
-
 ## Installation
 
 This application is designed to be used as a Python application, executed within a Python IDE such as PyCharm or Visual Studio Code. It does not provide all the necessary features to operate as a stand-alone Command Line application.
@@ -40,6 +30,39 @@ To install this test client on a computer, you will need to be able to:
     * as listed in `requirements-conda.txt` - for Conda
     * as listed in `requirements-pip.txt` - for PIP
 
+## Use
+
+Run the tests from the command line.
+
+From within the root folder of the repository, with the application's dependencies installed on the available Python environment, run:
+
+```bash
+python tclient
+```
+
+You should see a result like this:
+
+```bash
+testing https://mesac-dev-csw.azurewebsites.net/csw
+┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Test ID ┃ Version ┃ Test Description                      ┃ Result ┃
+┡━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 1a      │ 2.0.2   │ GetCapabilities response received     │ ok     │
+│ 1b      │ 2.0.2   │ GetCapabilities root element ok       │ ok     │
+│ 2       │ 2.0.2   │ GetCapabilities Section parameters ok │ ok     │
+└─────────┴─────────┴───────────────────────────────────────┴────────┘
+```
+
+## License & Reuse
+
+_This test client has initially been developed to test the [Geological Survey of South Australia](https://www.energymining.sa.gov.au/industry/geological-survey)'s pyCSW installation and is optimised for that. For use elsewhere, some recoding will likely be needed._
+
+The code in this repository is licensed for reuse using the [MIT License](https://opensource.org/license/mit), as is the code of the pyCSW application. See the LICENSE file for details.
+
+The implementation of CSW in Python as pyCSW is governed by the [pyCSW Steering Committee](https://pycsw.org/community/psc.html).
+
+The Catalogue Service for the Web (CSW) specification that pyCSW implements is an [Open Geospatial Consortium](https://www.ogc.org) standard that is freely available.
+
 ## Contact
 
 This test client was developed by KurrawongAI. Contact them for more info:
@@ -52,6 +75,26 @@ This test client was developed by KurrawongAI. Contact them for more info:
 
 ## Admin
 
-conda list -e > requirements-conda.txt
+### Commands
 
+Generate conda dependencies:
+
+```
+conda list -e > requirements-conda.txt
+```
+
+Generate PIP dependencies:
+
+```
 pip list --format=freeze > requirements-pip.txt
+```
+
+### Release process
+
+* commit changes
+* pass all tests
+* update version in pyproject.toml
+* git tag {VERSION}
+* git push
+* git push --tags
+* make release on GitHub
