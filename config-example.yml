@@ -1,0 +1,6 @@
+csw:
+  endpoint: "http://example.com/csw"
+  versions: ["2.0.2", "3.0.0"]
+  operations: ["GetCapabilities", "DescribeRecord", "GetDomain", "GetRecords", "GetRecordById", "Harvest"]
+  outputschemas: ["http://standards.iso.org/iso/19115/-3/mdb/2.0"]
+  profiles: ["iso19115p3"]

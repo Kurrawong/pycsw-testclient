@@ -32,7 +32,13 @@ To install this test client on a computer, you will need to be able to:
 
 ## Use
 
-Run the tests from the command line.
+### Configure the testing parameters
+
+You need a file called `config.yml` in the root directory of the repository that gives the testing parameters, such as server location.
+
+There is an example file - `config-example.yml` - that can be copied to `config.yml`, have it's values altered, and used.
+
+### Run the tests from the command line
 
 From within the root folder of the repository, with the application's dependencies installed on the available Python environment, run:
 
