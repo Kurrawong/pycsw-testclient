@@ -14,7 +14,6 @@ httpcore=1.0.2=py312hca03da5_0
 httpx=0.27.0=py312hca03da5_0
 icu=73.1=h313beb8_0
 idna=3.7=py312hca03da5_0
-iniconfig=1.1.1=pyhd3eb1b0_0
 jpeg=9e=h80987f9_3
 krb5=1.20.1=hf3e1bf2_1
 lerc=4.0.0=h313beb8_0
@@ -41,14 +40,11 @@ mdurl=0.1.0=py312hca03da5_0
 ncurses=6.4=h313beb8_0
 openssl=3.4.1=h81ee809_0
 owslib=0.24.1=pyhd3eb1b0_0
-packaging=24.2=py312hca03da5_0
 pip=25.0=py312hca03da5_0
-pluggy=1.5.0=py312hca03da5_0
 proj=9.3.1=h805f6d4_0
 pygments=2.15.1=py312hca03da5_1
 pyproj=3.6.1=py312h4b40952_1
 pysocks=1.7.1=py312hca03da5_0
-pytest=8.3.4=py312hca03da5_0
 python=3.12.2=hdf0ec26_0_cpython
 python-box=7.3.2=py312hea69d52_0
 python-dateutil=2.9.0post0=py312hca03da5_2
