@@ -1,20 +1,19 @@
 # CSW Test Client
 
-This repository contains the source code for a testing web client for the [pyCSW](https://pycsw.org) application.
+This repository contains a tool that can be used to test the conformance of a [Catalogue Service for the Web](https://www.ogc.org/publications/standard/cat/) endpoint to a stated set of version, operation and profile requirements. It is expected to be used against installations of tools such as [pyCSW](https://pycsw.org), [GeoNetwork](https://geonetwork-opensource.org/) and so on.
 
-This client runs and makes a series of web requests of a pyCSW installation and checks that the XML responses sent back match requirements.
+> [!NOTE]
+> The _Open Geospatial Consurium_ provides the official [CSW Conformance Test Suite](https://cite.opengeospatial.org/te2/about/csw/2.0.2/site/) but this tool is designed to be simpler to configure for customised testing - only certain versions of CSW implemented etc. - and to be used both 'manually' by people and automatically within system checking workflows to ensure that CSW servers are working as expected.
 
 ## How It Works
 
-This library contains a list of 30+ individual test functions, created using Pythons [pytest](https://pypi.org/project/pytest/) testing framework. This framework allows nice running and reporting of tests within a Python environment.
+This library contains a list of 30+ individual test functions, created using Python's [pytest](https://pypi.org/project/pytest/) testing framework. The tests work nicely running and displaing results within a Python environment, on a Linux/Mac/Windows command line or within infrastructure pipeline code, e.g. system checking functions.
 
-The tests are run multiple times each with different parameters, chosen to cover all the elements of the target pyCSW installation.
+The tests are run multiple times each with different parameters, chosen by declared configuration, to cover all the elements required to be tested of the target CSW installation.
 
-The actual sending of web requests to a pyCSW server is managed by [OWSLib](https://pypi.org/project/OWSLib/) and [httpx](https://pypi.org/project/httpx/) Python code. The first is a dedicated OGC API client library. The second a general web requests library.
+The actual sending of web requests to a CSW server is managed by the basic Python HTTP interactions library [httpx](https://pypi.org/project/httpx/) with some dditional testing using the [OWSLib](https://pypi.org/project/OWSLib/) OGC Web Service client. 
 
-The testing of response payloads is doe either with OWLLib or by parsing response XML with the general-purpose [lxml](https://pypi.org/project/lxml/) library which performs validation and XPath queries on results.
-
-Results from tests are reported to the command line in the usual pytest way.
+The testing of responses is doe either with HTTPX - is the endpoint even up? - or by parsing response XML with the general-purpose [lxml](https://pypi.org/project/lxml/) library which performs schema validation and XPath queries on results, the specifics of which have been established per test.
 
 ## Installation
 
