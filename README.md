@@ -1,4 +1,4 @@
-# pyCSW Test Client
+# CSW Test Client
 
 This repository contains the source code for a testing web client for the [pyCSW](https://pycsw.org) application.
 
